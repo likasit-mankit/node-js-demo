@@ -4,15 +4,8 @@
 // ES6
 // import { add, Pi } from "./calculator.js";
 
-// file system
-const fs = require("fs");
+// path 
+const path = require("path");
 
-const content = "Hello Node.js!";
-
-fs.writeFile("goodbye.txt", content, (err) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log("File written successfully");
-});
+const filePath = path.join("user", "report", "2024", "file.pdf");
+console.log(filePath);
