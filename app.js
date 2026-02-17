@@ -4,8 +4,13 @@
 // ES6
 // import { add, Pi } from "./calculator.js";
 
-// path 
-const path = require("path");
+// os (operating system)
+const os = require("os");
 
-const filePath = path.join("user", "report", "2024", "file.pdf");
-console.log(filePath);
+console.log(`OS Platform: ${os.platform()}`);
+console.log(`OS Architecture: ${os.arch()}`);
+console.log(`OS CPU: ${os.cpus().length}`);
+console.log(`OS Total Memory: ${os.totalmem()}`);
+console.log(`OS Free Memory: ${os.freemem()}`);
+console.log(`OS Uptime: ${os.uptime()}`);
+console.log(`OS User Info: ${os.userInfo().username}`);
