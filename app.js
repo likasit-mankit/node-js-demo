@@ -2,7 +2,17 @@
 // const calculator = require("./calculator");
 
 // ES6
-import { add, Pi } from "./calculator.js";
+// import { add, Pi } from "./calculator.js";
 
-console.log(add(1, 2));
-console.log(Pi);
+// file system
+const fs = require("fs");
+
+const content = "Hello Node.js!";
+
+fs.writeFile("goodbye.txt", content, (err) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  console.log("File written successfully");
+});
