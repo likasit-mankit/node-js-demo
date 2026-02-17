@@ -10,6 +10,8 @@ formEl.addEventListener("submit", (e) => {
     const num2 = parseFloat(num2El.value);
     const operator = operatorEl.value;
 
+    console.log(num1, num2, operator);
+
     if (isNaN(num1) || isNaN(num2)) {
         resultEl.value = "Please enter valid numbers";
         return;
