@@ -1,31 +1,23 @@
 const http = require("http");
+const url = require("url");
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  // res.statusCode = 200;
+  // res.setHeader("Content-Type", "application/json");
 
-  const htmlContent = `
-    <html>
-      <head>
-        <title>หน้าแรก</title>
-      </head>
-      <body>
-        <h1>หน้าแรก</h1>
-      </body>
-    </html>
-  `;
+  // res.statusCode + res.setHeader >> easy way to res.writeHead
+  // res.writeHead(200, { "Content-Type": "application/json" });
 
-  if (req.url === "/") {
-    res.end(htmlContent);
-  } else if (req.url === "/about") {
-    res.end("About Page");
-  } else {
-    res.statusCode = 404;
-    res.end("ไม่พบหน้าเว็บ");
-  }
-});
+  // Read data form URL 
+  // path : /user/ 
+  // Query String : ?name=John&age=30
+  res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
 
+  const userAgent = req.headers["user-agent"] || "ไม่ได้ระบุ";
+  res.end(`userAgent ของคุณคือ : ${userAgent}`);
+
+})
 server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+  console.log(`Server running at http://localhost:${port}/`)
+})
