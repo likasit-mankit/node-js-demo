@@ -1,16 +1,13 @@
-// CommonJS
-// const calculator = require("./calculator");
+const http = require("http");
+const port = 3000;
 
-// ES6
-// import { add, Pi } from "./calculator.js";
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "text/plain");
 
-// os (operating system)
-const os = require("os");
+    res.end("Hello World");
+});
 
-console.log(`OS Platform: ${os.platform()}`);
-console.log(`OS Architecture: ${os.arch()}`);
-console.log(`OS CPU: ${os.cpus().length}`);
-console.log(`OS Total Memory: ${os.totalmem()}`);
-console.log(`OS Free Memory: ${os.freemem()}`);
-console.log(`OS Uptime: ${os.uptime()}`);
-console.log(`OS User Info: ${os.userInfo().username}`);
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+});
