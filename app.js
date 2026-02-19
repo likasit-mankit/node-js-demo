@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const path = require('path');
 
 const usersRouter = require("./routes/users");
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // middleware สำหรับบันทึกข้อมูล 
 const loggerMiddleware = (req, res, next) => {
@@ -14,9 +17,6 @@ const loggerMiddleware = (req, res, next) => {
 
 app.use(loggerMiddleware);
 
-app.get("/", (req, res) => {
-  res.send("Hello express! main page");
-});
 
 app.use("/users", usersRouter);
 
