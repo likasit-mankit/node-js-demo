@@ -5,6 +5,9 @@ const path = require('path');
 
 const usersRouter = require("./routes/users");
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // middleware สำหรับบันทึกข้อมูล 
@@ -19,6 +22,15 @@ app.use(loggerMiddleware);
 
 
 app.use("/users", usersRouter);
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Home', heading: 'New Season Arrivals' });
+  console.log('homepage is here');
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About Us', heading: 'About ModernShop' });
+  console.log('aboutpage is here');
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);

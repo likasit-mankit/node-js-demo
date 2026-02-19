@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/likasit-mankit/node-js-demo#readme",
   "dependencies": {
+    "ejs": "^4.0.1",
     "express": "^5.2.1"
   },
   "devDependencies": {
