@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app3.js",
+    "dev": "nodemon server.js",
+    "loadtest": "artillery run loadtest.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/likasit-mankit/node-js-demo#readme",
   "dependencies": {
+    "artillery": "^2.0.30",
     "bcrypt": "^6.0.0",
     "ejs": "^4.0.1",
     "express": "^5.2.1"
