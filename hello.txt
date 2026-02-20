@@ -1,6 +1,0 @@
-Hello World!
-Hello Node.js!
-Hello JavaScript!
-Hello Antigravity!
-Hello VS Code!
-Hello GitHub!
